@@ -71,3 +71,25 @@ p2.then(function(v) {
 })
 ```
 
+Promise.reject(reason)
+
+​	返回一个状态为失败的Promise对象，并将给定的失败信息传递给对应的处理方法
+
+Promise.all(iterable)
+
+​	这个方法返回一个新的promise对象，该promise对象在iterable参数对象里所有的promise对象都成功的时候才会触发成功，一旦有任何一个iterable里面的promise对象失败则立即触发该promise对象的失败。这个新的promise对象在触发成功状态以后，会把一个包含iterable里所有promise返回值的数组作为成功回调的返回值，顺序跟iterable的顺序保持一致；如果这个新的promise对象触发了失败状态，它会把iterable里第一个触发失败的promise对象的错误信息作为它的失败错误信息。Promise.all方法常被用于处理多个promise对象的状态集合。
+
+Promise.race(iterable)
+
+​	当iterable参数里的任意一个子promise被成功或失败后，父promise马上也会用子promise的成功返回值或失败详情作为参数调用父promise绑定的相应句柄，并返回该promise对象。
+
+Promise.prototype.catch(onRejected)
+
+​	添加一个否定(rejection)回调到当前promise，返回一个新的Promise。如果这个回调被调用，新promise将以它的返回值来resolve，否则如果当前promise进入fulfilled状态，则以当前promise肯定结果作为新promise的肯定结果
+
+Promise.prototype.then(onFulfilled, onRejected)
+
+​	添加肯定和否定回调到当前 promise, 返回一个新的 promise, 将以回调的返回值 来resolve.	
+
+
+
